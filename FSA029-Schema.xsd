@@ -37,7 +37,7 @@
         </xs:documentation>
     </xs:annotation>
 
-    <xs:include schemaLocation="/Users/jdc338/code/jdc338/XML-Challenge/CommonTypes/v14/CommonTypes-Schema.xsd"/>
+    <xs:include schemaLocation="/Users/jdc338/code/jdc338/XML-Challenge/CommonTypes-Schema.xsd"/>
 
     <xs:element name="FSA029-BalanceSheet">
         <xs:complexType>

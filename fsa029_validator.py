@@ -1,4 +1,5 @@
 import argparse
+import os
 from lxml import etree
 
 def validate_submission(schema_path, submission_path):
@@ -21,7 +22,9 @@ def main():
     parser.add_argument("submission_path", help="Path to the XML submission file")
 
     args = parser.parse_args()
-    validate_submission(args.schema_path, args.submission_path)
+    schema_path = args.schema_path  # Added this line to set schema_path
+    validate_submission(schema_path, args.submission_path)
+
 
 if __name__ == "__main__":
     main()
