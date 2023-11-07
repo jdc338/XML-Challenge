@@ -22,7 +22,7 @@
         <Investments>8000</Investments>
         <TotalFixedAssets>90530</TotalFixedAssets>
     </FixedAssets>
-    
+
     <CurrentAssets>
         <StocksInvestments>1000</StocksInvestments>
         <TradeDebtors>
@@ -98,44 +98,8 @@
                 </Item>
             </OffBalanceSheet>
         </IncorporatedEntities>
-
-        <PartnershipsSoleTraders>
-            <CapitalAccount>92000</CapitalAccount>
-            <RetainedEarnings>200</RetainedEarnings>
-            <CurrentAccountCurrentYear>
-                <ExternallyVerified>100</ExternallyVerified>
-                <UnverifiedTradingBook>80</UnverifiedTradingBook>
-                <UnverifiedNonTradingBook>50</UnverifiedNonTradingBook>
-            </CurrentAccountCurrentYear>
-            <TotalCapital>92430</TotalCapital>
-            <OffBalanceSheet>
-                <Item>
-                    <ItemType>OTCs</ItemType>
-                    <Value>1000</Value>
-                </Item>
-                <Item>
-                    <ItemType>Derivatives</ItemType>
-                    <Value>2000</Value>
-                </Item>
-            </OffBalanceSheet>
-        </PartnershipsSoleTraders>
-
-        <LLPs>
-            <PartnersCashCapitalAccounts>92000</PartnersCashCapitalAccounts>
-            <PartnersCurrentAccounts>430</PartnersCurrentAccounts>
-            <TotalPartnersCapital>92430</TotalPartnersCapital>
-            <OffBalanceSheet>
-                <Item>
-                    <ItemType>OTCs</ItemType>
-                    <Value>1000</Value>
-                </Item>
-                <Item>
-                    <ItemType>Derivatives</ItemType>
-                    <Value>2000</Value>
-                </Item>
-            </OffBalanceSheet>
-        </LLPs>
-
     </Capital>
+
+ 
 
 </FSA029-BalanceSheet>
