@@ -1,5 +1,4 @@
 import argparse
-import os
 from lxml import etree
 
 def validate_submission(schema_path, submission_path):
