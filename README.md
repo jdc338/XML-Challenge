@@ -26,7 +26,7 @@ Replace `/path/to/FSA029-Schema.xsd` with the actual path to your FSA029 schema 
 
 If the submission is valid, the script will display "Validation successful. The submission is valid." If there are any validation errors, the script will provide an error message.
 
-## Further Info'
+## Further Info
 
 (a) **What causes it to fail schema validation?**
    'FSA029-Sample-Full.xml' may fail schema validation due to various reasons. Some common causes include incorrect data types, missing required elements, or elements in the wrong order. The regulator likely included this example to demonstrate the types of errors that can occur in submissions.
