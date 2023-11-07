@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
     ****************************************************************************************************
-    *                                                                 
-    *    Schema for: Data Item FSA029-BalanceSheet                    
-    *                                                                 
+    *
+    *    Schema for: Data Item FSA029-BalanceSheet
+    *
     *    Version:   4
-    *    Date:      28 June 2022                                 
-    *                                                                 
+    *    Date:      28 June 2022
+    *
     *    History:   Version 4 changes the CommonTypes-Schema to Version 14 and removes the SDS003-Schema
     *
-    *               Version 3 adds "GroupInfo" element to allow group reporting 
-    
+    *               Version 3 adds "GroupInfo" element to allow group reporting
+
     *               Version 2 changes the CurrentLiabilities element to minOccurs="1"
-    *                   
-    *               Version 1 follows publication of legal instruments 2007/10 and 2007/45            
-    *                                                                 
+    *
+    *               Version 1 follows publication of legal instruments 2007/10 and 2007/45
+    *
     ****************************************************************************************************
 -->
 
-<xs:schema 
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    elementFormDefault="qualified" 
-    attributeFormDefault="unqualified" 
-    
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+
     targetNamespace="urn:fsa-gov-uk:MER:FSA029:4"
-    xmlns=          "urn:fsa-gov-uk:MER:FSA029:4" 
-    xmlns:mer-meta= "urn:fsa-gov-uk:MER:Meta-Data:2" 
-    
-    version="4" 
+    xmlns=          "urn:fsa-gov-uk:MER:FSA029:4"
+    xmlns:mer-meta= "urn:fsa-gov-uk:MER:Meta-Data:2"
+
+    version="4"
     id="MER-FSA029">
-    
+
     <xs:annotation>
         <xs:documentation>
             <mer-meta:DataItemReference>FSA029</mer-meta:DataItemReference>
             <mer-meta:DataItemName>Balance Sheet</mer-meta:DataItemName>
         </xs:documentation>
     </xs:annotation>
-    
-    <xs:include schemaLocation="../../CommonTypes/v14/CommonTypes-Schema.xsd"/>
+
+    <xs:include schemaLocation="/Users/jdc338/code/jdc338/XML-Challenge/CommonTypes/v14/CommonTypes-Schema.xsd"/>
 
     <xs:element name="FSA029-BalanceSheet">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="GroupInfo" type="GroupFRNStructure" minOccurs="0"/>
-                
+
                 <xs:element name="FixedAssets"            minOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
@@ -54,7 +54,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                
+
                 <xs:element name="CurrentAssets"          minOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
@@ -66,7 +66,7 @@
                                         <xs:element name="After90"  type="MonetaryType" minOccurs="0"/>
                                     </xs:sequence>
                                 </xs:complexType>
-                            </xs:element>    
+                            </xs:element>
                             <xs:element name="NonTradeDebtors"  type="MonetaryType" minOccurs="0"/>
                             <xs:element name="SundryDebtors"    type="MonetaryType" minOccurs="0"/>
                             <xs:element name="LoansOtherAssets" type="MonetaryType" minOccurs="0"/>
@@ -74,7 +74,7 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="Segregated"    type="MonetaryType" minOccurs="0"/>
-                                        <xs:element name="NonSegregated" type="MonetaryType" minOccurs="0"/>                                       
+                                        <xs:element name="NonSegregated" type="MonetaryType" minOccurs="0"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -82,7 +82,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                
+
                 <xs:element name="CurrentLiabilities"     minOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
@@ -105,7 +105,7 @@
                 </xs:element>
 
                 <xs:element name="NetCurrentAssets"       type="MonetaryType" minOccurs="1"/>
-                                
+
                 <xs:element name="LongTermLiabilities"    minOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
@@ -124,13 +124,13 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                
+
                 <xs:element name="TotalAssetsLiabilities" type="MonetaryType" minOccurs="1" />
-                
+
                 <xs:element name="Capital"                minOccurs="1">
                     <xs:complexType>
                         <xs:choice>
-                            
+
                             <xs:element name="IncorporatedEntities" minOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -139,7 +139,7 @@
                                             <xs:complexType>
                                                 <xs:sequence>
                                                     <xs:element name="Fixed"    type="NonNegativeMonetaryType" minOccurs="0"/>
-                                                    <xs:element name="NonFixed" type="NonNegativeMonetaryType" minOccurs="0"/>                                                   
+                                                    <xs:element name="NonFixed" type="NonNegativeMonetaryType" minOccurs="0"/>
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
@@ -170,7 +170,7 @@
                                      </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-             
+
                             <xs:element name="PartnershipsSoleTraders" minOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -188,9 +188,9 @@
                                         <xs:element name="TotalCapital"    type="MonetaryType" minOccurs="1"/>
                                         <xs:element name="OffBalanceSheet" type="OffBalanceSheetStructure" minOccurs="0"/>
                                      </xs:sequence>
-                                </xs:complexType> 
+                                </xs:complexType>
                             </xs:element>
-                            
+
                             <xs:element name="LLPs" minOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -201,16 +201,16 @@
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            
+
                         </xs:choice>
                     </xs:complexType>
-                </xs:element>             
-            </xs:sequence> 
+                </xs:element>
+            </xs:sequence>
             <xs:attribute name="reportingBasis" type="ReportingBasisType" use="required"/>
             <xs:attributeGroup ref="CurrencyAndUnitsAttrGroup"/>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:complexType name="OffBalanceSheetStructure">
         <xs:sequence>
             <xs:element name="Item" minOccurs="0" maxOccurs="unbounded">
@@ -235,5 +235,5 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-                
+
 </xs:schema>
