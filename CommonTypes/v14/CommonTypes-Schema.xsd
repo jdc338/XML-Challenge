@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
     ****************************************************************************************************
-    *                                                                 
-    *    Schema for: CommonTypes 
-    *                                                                 
-    *    Version:    14                                      
-    *    Date:       27 May 2022 
-    *                                                                 
+    *
+    *    Schema for: CommonTypes
+    *
+    *    Version:    14
+    *    Date:       27 May 2022
+    *
     *    History:   Version 14 changes FRNType to allow 7 digits.
     *               Incorporates the Shared Defintion Schemas SDS001 to SDS003 (which have been retired)
     *
-    *               Version 13 adds "Investment firm group" to ReportingBasisType  
+    *               Version 13 adds "Investment firm group" to ReportingBasisType
     *
     *               Version 12 adds "XKX" to CountryCodeType3 and "RFB sub-group" to ReportingBasisType
     *
     *               Version 11 introduces a 2000 character string
-    *                
-    *               Version 10 introduces a Year type, NI, Passport and ISO (3 alpha), 2 dates 
+    *
+    *               Version 10 introduces a Year type, NI, Passport and ISO (3 alpha), 2 dates
     *
     *               Version 9 introduces EEACountryCodeType
-    *               
+    *
     *               Version 8 introduces Accounting Basis
     *
     *               Version 7 introduces the PSD simple types from FSAFeedCommon-v1-2 and de-duplicates.
     *
     *               Version 6.1 introduces the changes made in v5.2
     *
-    *               Version 6 adds MonetaryFloat2Type for use in the new RMAR-K and IRNType to be used 
-    *               in the new RIA-Complaints data items. 
+    *               Version 6 adds MonetaryFloat2Type for use in the new RMAR-K and IRNType to be used
+    *               in the new RIA-Complaints data items.
     *               Minor change to NonNegativeFloat2Type constraint from maxInclusive to minInclusive
     *
-    *               Version 5.2 CurrencyType: adds BC1 and BC+ 
-    *               CountryCodeType: Add BQ, CW, SS and SX  
+    *               Version 5.2 CurrencyType: adds BC1 and BC+
+    *               CountryCodeType: Add BQ, CW, SS and SX
     *
     *               Version 5.1 adds new enumeration to CurrencyType element – CON "All Convertible" for
     *               firms with Whole Firm Liquidity Modification whose domestic currency is non-convertible.
@@ -56,36 +56,36 @@
     *
     *               Version 3 changes the list of allowable values of ReportingBasisType.
     *
-    *               Version 2.0 removes: 
+    *               Version 2.0 removes:
     *                              GroupFirmsGroup (to SDS003)
     *                              ConsolidationGroup
     *                           adds:
     *                              Float2Type
     *                              Float4Type
     *                              ReportingBasisType
-    *                              MonetaryDP2Type 
+    *                              MonetaryDP2Type
     *                              NonNegativeMonetaryDP2Type
     *                              PercentDP0Type
     *                              PercentDP3Type
-    *                              BasisCurrencyAndUnitsAttrGroup 
+    *                              BasisCurrencyAndUnitsAttrGroup
     *
-    *               Version 1.0 issued to accompany initial release of DRG covering data items 
-    *               FSA001-4, FSA008, FSA010-13, PSA016, FSA018, FSA019 and FSA028.            
-    *                                                                 
+    *               Version 1.0 issued to accompany initial release of DRG covering data items
+    *               FSA001-4, FSA008, FSA010-13, PSA016, FSA018, FSA019 and FSA028.
+    *
     ****************************************************************************************************
 -->
 
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    
+
     elementFormDefault=  "qualified"
     attributeFormDefault="unqualified"
-    
+
     version="14.0"
     id=     "MER-CommonTypes">
 
     <!-- **********************************************************************************
-        Text Simple Types  
+        Text Simple Types
         ********************************************************************************** -->
     <xs:simpleType name="AccountingBasisType">
         <xs:restriction base="xs:string">
@@ -93,8 +93,8 @@
             <xs:enumeration value="accruals"/>
         </xs:restriction>
     </xs:simpleType>
-    
-    <xs:simpleType name="CountryCodeType">      <!--  Based on ISO 3166  --> 
+
+    <xs:simpleType name="CountryCodeType">      <!--  Based on ISO 3166  -->
         <xs:restriction base="xs:string">
             <xs:enumeration value="AD" />   <!--  Andorra   -->
             <xs:enumeration value="AE" />   <!--  United Arab Emirates   -->
@@ -348,23 +348,23 @@
             <xs:enumeration value="ZW" />   <!--  Zimbabwe   -->
         </xs:restriction>
     </xs:simpleType>
-    
-    <xs:simpleType name="CountryCodeType3">     <!--  Based on ISO 3166 with modifications  --> 
+
+    <xs:simpleType name="CountryCodeType3">     <!--  Based on ISO 3166 with modifications  -->
         <xs:restriction base="xs:string">
             <xs:enumeration value="ABW" />   <!--  Aruba   -->
-            <xs:enumeration value="AFG" />   <!--  Afghanistan   -->  
+            <xs:enumeration value="AFG" />   <!--  Afghanistan   -->
             <xs:enumeration value="AGO" />   <!--  Angola   -->
-            <xs:enumeration value="AIA" />   <!--  Anguilla   -->           
+            <xs:enumeration value="AIA" />   <!--  Anguilla   -->
             <xs:enumeration value="ALA" />   <!--  Aland Islands   -->
-            <xs:enumeration value="ALB" />   <!--  Albania   -->         
+            <xs:enumeration value="ALB" />   <!--  Albania   -->
             <xs:enumeration value="AND" />   <!--  Andorra   -->
             <xs:enumeration value="ARE" />   <!--  United Arab Emirates   -->
             <xs:enumeration value="ARG" />   <!--  Argentina   -->
             <xs:enumeration value="ARM" />   <!--  Armenia   -->
-            <xs:enumeration value="ASM" />   <!--  American Samoa   --> 
-            <xs:enumeration value="ATA" />   <!--  Antarctica   -->    
-            <xs:enumeration value="ATF" />   <!--  French Southern Territories   -->        
-            <xs:enumeration value="ATG" />   <!--  Antigua and Barbuda   -->  
+            <xs:enumeration value="ASM" />   <!--  American Samoa   -->
+            <xs:enumeration value="ATA" />   <!--  Antarctica   -->
+            <xs:enumeration value="ATF" />   <!--  French Southern Territories   -->
+            <xs:enumeration value="ATG" />   <!--  Antigua and Barbuda   -->
             <xs:enumeration value="AUS" />   <!--  Australia   -->
             <xs:enumeration value="AUT" />   <!--  Austria   -->
             <xs:enumeration value="AZE" />   <!--  Azerbaijan   -->
@@ -373,7 +373,7 @@
             <xs:enumeration value="BEN" />   <!--  Benin   -->
             <xs:enumeration value="BES" />   <!--  Boaire, Sint Eustatius and Saba-->
             <xs:enumeration value="BFA" />   <!--  Burkina Faso   -->
-            <xs:enumeration value="BGD" />   <!--  Bangladesh   -->   
+            <xs:enumeration value="BGD" />   <!--  Bangladesh   -->
             <xs:enumeration value="BGR" />   <!--  Bulgaria   -->
             <xs:enumeration value="BHR" />   <!--  Bahrain   -->
             <xs:enumeration value="BHS" />   <!--  Bahamas   -->
@@ -405,7 +405,7 @@
             <xs:enumeration value="CPV" />   <!--  Cabo Verde   -->
             <xs:enumeration value="CRI" />   <!--  Costa Rica   -->
             <xs:enumeration value="CUB" />   <!--  Cuba   -->
-            <xs:enumeration value="CUW" />   <!--  Curacao  -->  
+            <xs:enumeration value="CUW" />   <!--  Curacao  -->
             <xs:enumeration value="CXR" />   <!--  Christmas Island   -->
             <xs:enumeration value="CYM" />   <!--  Cayman Islands   -->
             <xs:enumeration value="CYP" />   <!--  Cyprus   -->
@@ -420,7 +420,7 @@
             <xs:enumeration value="EGY" />   <!--  Egypt   -->
             <xs:enumeration value="ERI" />   <!--  Eritrea   -->
             <xs:enumeration value="ESH" />   <!--  Western Sahara   -->
-            <xs:enumeration value="ESP" />   <!--  Spain   -->  
+            <xs:enumeration value="ESP" />   <!--  Spain   -->
             <xs:enumeration value="EST" />   <!--  Estonia   -->
             <xs:enumeration value="ETH" />   <!--  Ethiopia   -->
             <xs:enumeration value="FIN" />   <!--  Finland   -->
@@ -430,7 +430,7 @@
             <xs:enumeration value="FRO" />   <!--  Faroe Islands   -->
             <xs:enumeration value="FSM" />   <!--  Micronesia, Federated States of   -->
             <xs:enumeration value="GAB" />   <!--  Gabon   -->
-            <xs:enumeration value="GBR" />   <!--  United Kingdom   -->  
+            <xs:enumeration value="GBR" />   <!--  United Kingdom   -->
             <xs:enumeration value="GEO" />   <!--  Georgia   -->
             <xs:enumeration value="GGY" />   <!--  Guernsey   -->
             <xs:enumeration value="GHA" />   <!--  Ghana   -->
@@ -453,7 +453,7 @@
             <xs:enumeration value="HRV" />   <!--  Croatia   -->
             <xs:enumeration value="HTI" />   <!--  Haiti   -->
             <xs:enumeration value="HUN" />   <!--  Hungary   -->
-            <xs:enumeration value="IDN" />   <!--  Indonesia   --> 
+            <xs:enumeration value="IDN" />   <!--  Indonesia   -->
             <xs:enumeration value="IMN" />   <!--  Isle of Man   -->
             <xs:enumeration value="IND" />   <!--  India   -->
             <xs:enumeration value="IOT" />   <!--  British Indian Ocean Territory   -->
@@ -467,7 +467,7 @@
             <xs:enumeration value="JEY" />   <!--  Jersey   -->
             <xs:enumeration value="JOR" />   <!--  Jordan   -->
             <xs:enumeration value="JPN" />   <!--  Japan   -->
-            <xs:enumeration value="KAZ" />   <!--  Kazakhstan   --> 
+            <xs:enumeration value="KAZ" />   <!--  Kazakhstan   -->
             <xs:enumeration value="KEN" />   <!--  Kenya   -->
             <xs:enumeration value="KGZ" />   <!--  Kyrgyzstan   -->
             <xs:enumeration value="KHM" />   <!--  Cambodia   -->
@@ -486,8 +486,8 @@
             <xs:enumeration value="LTU" />   <!--  Lithuania   -->
             <xs:enumeration value="LUX" />   <!--  Luxembourg   -->
             <xs:enumeration value="LVA" />   <!--  Latvia   -->
-            <xs:enumeration value="MAC" />   <!--  Macao   -->   
-            <xs:enumeration value="MAF" />   <!--  Saint Martin (French part)   --> 
+            <xs:enumeration value="MAC" />   <!--  Macao   -->
+            <xs:enumeration value="MAF" />   <!--  Saint Martin (French part)   -->
             <xs:enumeration value="MAR" />   <!--  Morocco   -->
             <xs:enumeration value="MCO" />   <!--  Monaco   -->
             <xs:enumeration value="MDA" />   <!--  Moldova, Republic of   -->
@@ -532,7 +532,7 @@
             <xs:enumeration value="PNG" />   <!--  Papua New Guinea   -->
             <xs:enumeration value="POL" />   <!--  Poland   -->
             <xs:enumeration value="PRI" />   <!--  Puerto Rico   -->
-            <xs:enumeration value="PRK" />   <!--  Korea, (North) Democratic People's Republic of   -->    
+            <xs:enumeration value="PRK" />   <!--  Korea, (North) Democratic People's Republic of   -->
             <xs:enumeration value="PRT" />   <!--  Portugal   -->
             <xs:enumeration value="PRY" />   <!--  Paraguay   -->
             <xs:enumeration value="PSE" />   <!--  Palestinian Territory  -->
@@ -546,7 +546,7 @@
             <xs:enumeration value="SDN" />   <!--  Sudan   -->
             <xs:enumeration value="SEN" />   <!--  Senegal   -->
             <xs:enumeration value="SGP" />   <!--  Singapore   -->
-            <xs:enumeration value="SGS" />   <!--  South Georgia and the South Sandwich Islands   --> 
+            <xs:enumeration value="SGS" />   <!--  South Georgia and the South Sandwich Islands   -->
             <xs:enumeration value="SHN" />   <!--  Saint Helena   -->
             <xs:enumeration value="SJM" />   <!--  Svalbard and Jan Mayen   -->
             <xs:enumeration value="SLB" />   <!--  Solomon Islands   -->
@@ -554,7 +554,7 @@
             <xs:enumeration value="SLV" />   <!--  El Salvador   -->
             <xs:enumeration value="SMR" />   <!--  San Marino   -->
             <xs:enumeration value="SOM" />   <!--  Somalia   -->
-            <xs:enumeration value="SPM" />   <!--  Saint Pierre and Miquelon   --> 
+            <xs:enumeration value="SPM" />   <!--  Saint Pierre and Miquelon   -->
             <xs:enumeration value="SRB" />   <!--  Serbia   -->
             <xs:enumeration value="SSD" />   <!--  South Sudan  -->
             <xs:enumeration value="STP" />   <!--  Sao Tome and Principe   -->
@@ -564,10 +564,10 @@
             <xs:enumeration value="SWE" />   <!--  Sweden   -->
             <xs:enumeration value="SWZ" />   <!--  Swaziland   -->
             <xs:enumeration value="SXM" />   <!--  Sint Maarten (Dutch part)-->
-            <xs:enumeration value="SYC" />   <!--  Seychelles   --> 
-            <xs:enumeration value="SYR" />   <!--  Syrian Arab Republic   -->           
+            <xs:enumeration value="SYC" />   <!--  Seychelles   -->
+            <xs:enumeration value="SYR" />   <!--  Syrian Arab Republic   -->
             <xs:enumeration value="TCA" />   <!--  Turks and Caicos Islands   -->
-            <xs:enumeration value="TCD" />   <!--  Chad   -->        
+            <xs:enumeration value="TCD" />   <!--  Chad   -->
             <xs:enumeration value="TGO" />   <!--  Togo   -->
             <xs:enumeration value="THA" />   <!--  Thailand   -->
             <xs:enumeration value="TJK" />   <!--  Tajikistan   -->
@@ -600,10 +600,10 @@
             <xs:enumeration value="YEM" />   <!--  Yemen   -->
             <xs:enumeration value="ZAF" />   <!--  South Africa   -->
             <xs:enumeration value="ZMB" />   <!--  Zambia   -->
-            <xs:enumeration value="ZWE" />   <!--  Zimbabwe   -->         
+            <xs:enumeration value="ZWE" />   <!--  Zimbabwe   -->
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="CurrencyType">         <!--  Based on ISO 4217, funds/metals/complementary/specials removed, CON, BC1, BC+ added for use on FSA047/48 as special values  -->
         <xs:restriction base="xs:string">
             <xs:enumeration value="AED" />   <!--  United Arab Emirates Dirham   -->
@@ -616,7 +616,7 @@
             <xs:enumeration value="AUD" />   <!--  Australian Dollar   -->
             <xs:enumeration value="AWG" />   <!--  Aruban Guilder   -->
             <xs:enumeration value="AZN" />   <!--  Azerbaijanian Manat   -->
-            <xs:enumeration value="BAM" />   <!--  Bosnian and Herzegovinan Convertible Mark   --> 
+            <xs:enumeration value="BAM" />   <!--  Bosnian and Herzegovinan Convertible Mark   -->
             <xs:enumeration value="BBD" />   <!--  Barbados Dollar   -->
             <xs:enumeration value="BC1" />   <!--  Buffer Currencies -->
             <xs:enumeration value="BC+" />   <!--  Buffer Currencies + SGD -->
@@ -769,14 +769,14 @@
             <xs:enumeration value="ZWL" />   <!--  Zimbabwean Dollar   -->
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="CurrencyBasisType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="consolidated"/>
-            <xs:enumeration value="single"/>   
+            <xs:enumeration value="single"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="CurrencyUnitsType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="decimal"/>
@@ -785,8 +785,8 @@
             <xs:enumeration value="millions"/>
         </xs:restriction>
     </xs:simpleType>
-    
-    <xs:simpleType name="EEACountryCodeType">   <!--  Based on ISO 3166  --> 
+
+    <xs:simpleType name="EEACountryCodeType">   <!--  Based on ISO 3166  -->
         <xs:restriction base="xs:string">
             <xs:enumeration value="AT" />   <!--  Austria   -->
             <xs:enumeration value="BE" />   <!--  Belgium   -->
@@ -805,35 +805,35 @@
             <xs:enumeration value="HU" />   <!--  Hungary   -->
             <xs:enumeration value="IE" />   <!--  Ireland   -->
             <xs:enumeration value="IS" />   <!--  Iceland   -->
-            <xs:enumeration value="IT" />   <!--  Italy   -->  
+            <xs:enumeration value="IT" />   <!--  Italy   -->
             <xs:enumeration value="LI" />   <!--  Liechtenstein   -->
             <xs:enumeration value="LT" />   <!--  Lithuania   -->
             <xs:enumeration value="LU" />   <!--  Luxembourg   -->
-            <xs:enumeration value="LV" />   <!--  Latvia   -->   
+            <xs:enumeration value="LV" />   <!--  Latvia   -->
             <xs:enumeration value="MT" />   <!--  Malta   -->
             <xs:enumeration value="NL" />   <!--  Netherlands   -->
             <xs:enumeration value="NO" />   <!--  Norway   -->
-            <xs:enumeration value="PL" />   <!--  Poland   --> 
+            <xs:enumeration value="PL" />   <!--  Poland   -->
             <xs:enumeration value="PT" />   <!--  Portugal   -->
             <xs:enumeration value="RO" />   <!--  Romania   -->
             <xs:enumeration value="SE" />   <!--  Sweden   -->
             <xs:enumeration value="SI" />   <!--  Slovenia   -->
-            <xs:enumeration value="SK" />   <!--  Slovakia   -->     
+            <xs:enumeration value="SK" />   <!--  Slovakia   -->
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="GroupCodeType">
         <xs:restriction base="xs:string">
             <xs:pattern value="[A-Z][0-9]{4}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="IRNType">
         <xs:restriction base="xs:string">
             <xs:pattern   value="[A-Z]{3}[0-9]{5}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="LimitedCurrencyType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="CAD" />   <!--  Canadian Dollar   -->
@@ -845,13 +845,13 @@
             <xs:enumeration value="USD" />   <!--  US Dollar   -->
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="NIType">
         <xs:restriction base="xs:string">
             <xs:pattern   value="[a-zA-Z]{2}[0-9]{6}[a-zA-Z]{1}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PassportType">
         <xs:restriction base="xs:string">
             <xs:maxLength value="10"/>
@@ -859,7 +859,7 @@
             <xs:pattern value="([a-zA-Z0-9])*"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="ReportingBasisType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="unconsolidated"/>
@@ -875,7 +875,7 @@
             <xs:enumeration value="Investment firm group"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="String20Type">
         <xs:restriction base="xs:string">
             <xs:maxLength value="20"/>
@@ -896,14 +896,14 @@
             <xs:minLength value="1"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="String2000Type">
         <xs:restriction base="xs:string">
             <xs:maxLength value="2000"/>
             <xs:minLength value="1"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="YesNoType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="yes"/>
@@ -920,7 +920,7 @@
     </xs:simpleType>
 
     <!-- **********************************************************************************
-        Numeric Simple Types  
+        Numeric Simple Types
         ********************************************************************************** -->
     <xs:simpleType name="DateAgeRestriction">
         <xs:restriction base="xs:date">
@@ -928,107 +928,107 @@
             <xs:maxInclusive value="2020-12-31" />
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="DateRestriction">
         <xs:restriction base="xs:date">
             <xs:minInclusive value="1915-01-01" />
             <xs:maxInclusive value="2099-12-31" />
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="Float1Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="Float2Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="Float4Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]{4}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="FRNType">
         <xs:restriction base="xs:integer">
             <xs:pattern value="[1-9]{1}[0-9]{5,6}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="IntegerType">
         <xs:restriction base="xs:integer">
             <xs:pattern     value="-?(([1-9][0-9]*)|0)"/>
             <xs:totalDigits value="15"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="MonetaryType">
         <xs:restriction base="xs:integer">
             <xs:pattern     value="-?(([1-9][0-9]*)|0)"/>
             <xs:totalDigits value="15"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="NonNegativeFloat2Type">
         <xs:restriction base="Float2Type">
             <xs:minInclusive value="0.00"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="NonNegativeIntegerType">
         <xs:restriction base="IntegerType">
             <xs:minInclusive value="0"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="NonNegativeMonetaryType">
         <xs:restriction base="MonetaryType">
             <xs:minInclusive value="0"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="NonNegativeMonetaryFloat2Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PercentDP0Type">
         <xs:restriction base="xs:integer">
             <xs:pattern     value="-?(([1-9][0-9]*)|0)"/>
             <xs:totalDigits value="15"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PercentDP1Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]{1}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PercentDP2Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PercentDP3Type">
         <xs:restriction base="xs:decimal">
             <xs:pattern value="-?([1-9][0-9]{0,14}|0)\.[0-9]{3}"/>
         </xs:restriction>
     </xs:simpleType>
-     
+
     <xs:simpleType name="YearType">
         <xs:restriction base="xs:integer">
             <xs:pattern value="[1-2][0-9]{3}"/>
         </xs:restriction>
-    </xs:simpleType>   
-    
+    </xs:simpleType>
+
     <!-- **********************************************************************************
         PII Simple Types (for the PII Information table - used in FSA031, FSA032 & RMA-E)
         ********************************************************************************** -->
@@ -1047,10 +1047,10 @@
             <xs:enumeration value="Argo Managing Agency"/>
             <xs:enumeration value="Assicurazioni Generali SpA (Branch of overseas firm)"/>
             <xs:enumeration value="Atrium Underwriting"/>
-            <xs:enumeration value="Aviva"/>        
+            <xs:enumeration value="Aviva"/>
             <xs:enumeration value="AXA insurance UK"/>
             <xs:enumeration value="Axis Specialty Europe SE / Axis Syndicate 1686 at Lloyd's"/>
-            <xs:enumeration value="Beazley (Lloyd's Syndicate or Limited Company)"/>       
+            <xs:enumeration value="Beazley (Lloyd's Syndicate or Limited Company)"/>
             <xs:enumeration value="Brit (Lloyd's Syndicate or Limited Company)"/>
             <xs:enumeration value="Canopius Managing Agents (previously Trenwick)"/>
             <xs:enumeration value="Catlin Insurance Company Ltd"/>
@@ -1104,7 +1104,7 @@
             <xs:enumeration value="XL Insurance Company UK Limited"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PIIExcessBusinessLineType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="All business lines"/>
@@ -1132,7 +1132,7 @@
             <xs:enumeration value="All other"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PIIExclusionBusinessLineType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="No exclusions apply to this policy"/>
@@ -1160,7 +1160,7 @@
             <xs:enumeration value="All other"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PIIExclusionTimePeriodType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Past business"/>
@@ -1168,7 +1168,7 @@
             <xs:enumeration value="Past and future business"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PIIExclusionCategoryType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="All business"/>
@@ -1181,9 +1181,9 @@
             <xs:enumeration value="Other"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <!-- **********************************************************************************
-        PSD Simple Types  
+        PSD Simple Types
         ********************************************************************************** -->
     <xs:simpleType name="NonEmptyString">
         <xs:annotation>
@@ -1194,7 +1194,7 @@
             <xs:minLength value="1"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="PostCodeType">
         <xs:annotation>
             <xs:documentation>Full or abbreviated UK postcode.</xs:documentation>
@@ -1203,7 +1203,7 @@
             <xs:maxLength value="8"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:simpleType name="YNType">
         <xs:annotation>
             <xs:documentation>Y or N</xs:documentation>
@@ -1213,9 +1213,9 @@
             <xs:enumeration value="N"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <!-- **********************************************************************************
-        PSD Complex Types  
+        PSD Complex Types
         ********************************************************************************** -->
     <xs:complexType name="CoreItems">
         <xs:annotation>
@@ -1244,7 +1244,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PSDFeedHeader">
         <xs:annotation>
             <xs:documentation>Defines the report header, common to all reports.</xs:documentation>
@@ -1286,7 +1286,7 @@
     </xs:complexType>
 
     <!-- ******************************************************************
-        Group Information Complex Types 
+        Group Information Complex Types
         ******************************************************************* -->
     <xs:complexType name="GroupInfoStructure">
         <xs:sequence>
@@ -1300,7 +1300,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="GroupFRNStructure">
         <xs:sequence>
             <xs:element name="OtherGroupFirms" minOccurs="0">
@@ -1312,9 +1312,9 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <!-- ******************************************************************
-        MLA Complex Types (for Arrears Analysis - used in MLA-F and MLA-H) 
+        MLA Complex Types (for Arrears Analysis - used in MLA-F and MLA-H)
         ******************************************************************* -->
     <xs:complexType name="ArrearsLoanTypeBlockStructure">
         <xs:sequence>
@@ -1327,7 +1327,7 @@
             <xs:element name="Total"           type="ArrearsLoanTypeRowStructure" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="ArrearsLoanTypeRowStructure">
         <xs:sequence>
             <xs:element name="EnteringHigherBand"   type="ArrearsDetailStructure" minOccurs="0"/>
@@ -1335,7 +1335,7 @@
             <xs:element name="Performance"          type="PercentDP2Type"         minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="ArrearsDetailStructure">
         <xs:sequence>
             <xs:element name="NumberOfCases"      type="NonNegativeIntegerType"  minOccurs="0"/>
@@ -1343,7 +1343,7 @@
             <xs:element name="BalanceOutstanding" type="NonNegativeMonetaryType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="ArrearsManagementRowStructure">
         <xs:sequence>
             <xs:element name="Possessions" minOccurs="0">
@@ -1366,11 +1366,11 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
- 
+
     <!-- **********************************************************************************
         PII Complex Types (for the PII Information table - used in FSA031, FSA032 & RMA-E)
         ********************************************************************************** -->
-    <xs:complexType name="PIIWithExclusionsStructure"> 
+    <xs:complexType name="PIIWithExclusionsStructure">
         <xs:sequence>
             <xs:element name="PIIPolicy" minOccurs="1" maxOccurs="10">
                 <xs:complexType>
@@ -1382,7 +1382,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIINoExclusionsStructure">
         <xs:sequence>
             <xs:element name="PIIPolicy" minOccurs="1" maxOccurs="10">
@@ -1395,7 +1395,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIWithActivitiesStructure">
         <xs:sequence>
             <xs:element name="PIIPolicy" minOccurs="1" maxOccurs="10">
@@ -1408,7 +1408,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIBasicStructure">
         <xs:sequence>
             <xs:group ref="PIIBasicCoreGroup"/>
@@ -1429,7 +1429,7 @@
             <xs:group ref="PIIBasicLimitReceivedGroup"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIBasicWithActivitiesStructure">
         <xs:sequence>
             <xs:group ref="PIIBasicActivitiesGroup"/>
@@ -1437,20 +1437,20 @@
             <xs:group ref="PIIBasicLimitReceivedIMDGroup"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIDetailedWithExclusionsStructure">
         <xs:sequence>
             <xs:element name="PolicyExcessDetail"    type="PIIPolicyExcessStructure"    minOccurs="1" maxOccurs="unbounded"/>
             <xs:element name="PolicyExclusionDetail" type="PIIPolicyExclusionStructure" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIDetailedNoExclusionsStructure">
         <xs:sequence>
             <xs:element name="PolicyExcessDetail" type="PIIPolicyExcessStructure"    minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
-    </xs:complexType>    
-    
+    </xs:complexType>
+
     <xs:complexType name="PIIActivityBreakdownStructure">
         <xs:sequence>
             <xs:element name="Mortgage"                            type="YesNoType" minOccurs="0"/>
@@ -1461,14 +1461,14 @@
             <xs:element name="CoverChangedRetailInvestments"       type="YesNoType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIPolicyExcessStructure">
         <xs:sequence>
             <xs:element name="BusinessLine" type="PIIExcessBusinessLineType"     minOccurs="1"/>
             <xs:element name="PolicyExcess" type="NonNegativeMonetaryType" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="PIIPolicyExclusionStructure">
         <xs:sequence>
             <xs:element name="PolicyExclusion" type="PIIExclusionBusinessLineType" minOccurs="0"/>
@@ -1476,7 +1476,7 @@
             <xs:element name="PIIExclusiontype" type="PIIExclusionCategoryType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <!-- **********************************************************************************
         PII Groups (for the PII Information table - used in FSA031, FSA032 & RMA-E)
         ********************************************************************************** -->
@@ -1486,7 +1486,7 @@
             <xs:element name="RetroactiveStartDate" type="xs:date"                       minOccurs="0"/>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:group name="PIIBasicCoreGroup">
         <xs:sequence>
             <xs:element name="Premium"     type="NonNegativeMonetaryType" minOccurs="1"/>
@@ -1495,7 +1495,7 @@
             <xs:element name="RenewalDate" type="xs:date"                 minOccurs="1"/>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:group name="PIIBasicLimitRequiredGroup">
         <xs:sequence>
             <xs:element name="LimitIndemnityRequired" minOccurs="1">
@@ -1507,7 +1507,7 @@
             </xs:element>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:group name="PIIBasicLimitReceivedGroup">
         <xs:sequence>
             <xs:element name="LimitIndemnityReceived" minOccurs="1">
@@ -1519,7 +1519,7 @@
             </xs:element>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:group name="PIIBasicLimitReceivedIMDGroup">
         <xs:sequence>
             <xs:element name="LimitIndemnityReceived" minOccurs="1">
@@ -1550,14 +1550,14 @@
             </xs:element>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:group name="PIIIndemnityLimitsGroup">
         <xs:sequence>
             <xs:element name="Single"    type="NonNegativeMonetaryType" minOccurs="1"/>
             <xs:element name="Aggregate" type="NonNegativeMonetaryType" minOccurs="1"/>
         </xs:sequence>
     </xs:group>
-    
+
     <!-- ************************************************************
         Common Attribute Groups
         ************************************************************ -->
@@ -1565,7 +1565,7 @@
         <xs:attribute name="currency" type="LimitedCurrencyType" use="required"/>
         <xs:attribute name="units"    type="CurrencyUnitsType"   use="required"/>
     </xs:attributeGroup>
-    
+
     <xs:attributeGroup name="BasisCurrencyAndUnitsAttrGroup">
         <xs:attribute name="reportingBasis" type="ReportingBasisType" use="required"/>
         <xs:attributeGroup ref="CurrencyAndUnitsAttrGroup"/>

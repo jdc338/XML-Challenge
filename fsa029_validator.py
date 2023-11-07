@@ -1,14 +1,7 @@
+import argparse
 from lxml import etree
-from pathlib import Path
 
 def validate_submission(schema_path, submission_path):
-    # Determine the directory of the script
-    script_dir = Path(__file__).resolve().parent
-
-    # Construct relative paths
-    schema_path = script_dir / schema_path
-    submission_path = script_dir / submission_path
-
     # Create an XML schema parser with the schema
     schema = etree.XMLSchema(etree.parse(schema_path))
 
@@ -22,8 +15,13 @@ def validate_submission(schema_path, submission_path):
     except Exception as e:
         print(f"Validation failed. The submission is not valid.\nError: {e}")
 
-if __name__ == "__main__":
-    schema_path = "CommonTypes-Schema.xsd"  # Updated to relative path
-    submission_path = "FSA029-Sample-Full.xml"  # Updated to relative path
+def main():
+    parser = argparse.ArgumentParser(description="Validate an XML submission against a schema.")
+    parser.add_argument("schema_path", help="Path to the schema file")
+    parser.add_argument("submission_path", help="Path to the XML submission file")
 
-    validate_submission(schema_path, submission_path)
+    args = parser.parse_args()
+    validate_submission(args.schema_path, args.submission_path)
+
+if __name__ == "__main__":
+    main()
